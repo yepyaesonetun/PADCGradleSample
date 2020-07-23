@@ -36,3 +36,5 @@ def loadSensitiveData(){
     verySensitiveDataProperties.load(project.rootProject.file('very_sensitive_data.properties').newDataInputStream())
     return verySensitiveDataProperties
 }
+
+apply from: 'libraries.gradle'
