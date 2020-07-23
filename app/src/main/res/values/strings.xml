@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">PADCGradleSample</string>
+
+    <string name="app_name_dev">PADCGradleSample(Dev)</string>
+    <string name="app_name_prod">PADCGradleSample</string>
 </resources>

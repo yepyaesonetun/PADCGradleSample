@@ -17,6 +17,27 @@ android {
         buildConfigField 'String','MY_ACCOUNT', "\"${verySensitiveData}\""
     }
 
+    productFlavors{
+        def BASE_URL_FIELD = "BASE_URL_FIELD"
+        def BASE_URL_DEV = "\"https://dev.padcmyanmar.com/"
+        def BASE_URL_PROD = "\"https://padcmyanmar.com/"
+
+        flavorDimensions "appMode"
+        dev{
+            dimension = "appMode"
+            applicationIdSuffix = ".dev"
+            manifestPlaceholders = [appName: "@string/app_name_dev"]
+            buildConfigField 'String', BASE_URL_FIELD , BASE_URL_DEV
+        }
+        prod{
+            dimension = "appMode"
+            applicationIdSuffix = ".prod"
+            manifestPlaceholders = [appName: "@string/app_name_prod"]
+            buildConfigField 'String', BASE_URL_FIELD , BASE_URL_PROD
+
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled true
